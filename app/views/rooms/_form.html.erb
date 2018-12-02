@@ -1,6 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
+    <% if flash[:alert] %>
+      <div class="notice">
+        <%= flash[:alert] %>
+      </div>
       <h1><%= @room.new_record? ? "Publicar": "Editar" %> Habitación</h1>
 
       <%= form_for @room do |f| %>
